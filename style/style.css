@@ -1,0 +1,40 @@
+.navbar>ul{
+    display: inline-flex;
+}
+
+.navbar>ul>li{
+    margin-left: 40px;
+    list-style: none;
+}
+.navbar{
+    background-color: aqua;
+    width: 100%;
+}
+a{
+    text-decoration: none;
+}
+h1{
+    text-align: center;
+}
+.sudoku{
+    width: 300px; /*500px*/
+    margin: auto;
+    display: -ms-inline-grid;
+}
+
+.input{
+    width: 20px;  /*40px;*/  
+    margin-top: 3px;
+    margin: 1px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+}
+
+.button{
+    margin: 5px;
+    text-align: center;
+}
+

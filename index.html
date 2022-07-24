@@ -5,63 +5,70 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style/style.css">
     <title>Sudoku</title>
 </head>
-<style>
-
-</style>
 
 <body>
-    <div class="navbar">
-        <ul>
+    <div class="whole">
+        <div class="navbar">
             <div class="links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
+                <a href="#">Home</a>
+                <a href="#">About</a>
             </div>
             <div class="search">
                 <input type="text" id="search" placeholder="Search">
             </div>
-        </ul>
-    </div>
+        </div>
 
-    <div class="content">
-        <h1>Learn Sudoku</h1>
-    </div>
-    <div id="mainSudoku">
-    </div>
-    <div class="button">
-        <button onclick="buttonsolve()" id="solve">Solve</button>
-        <button onclick="clearSudoku()" id="clear">Clear</button>
-    </div>
-    <div class="settings">
-        <h1>Settings</h1>
-    </div>
+        <div class="content">
+            <h1>Learn Sudoku</h1>
+        </div>
+        <div id="mainSudoku">
+        </div>
+        <div class="button">
+            <button onclick="buttonsolve()" id="solve">Solve</button>
+            <button onclick="clearSudoku()" id="clear">Clear</button>
+        </div>
+        <div class="settings">
+            <button id="question" type="button" onclick="setQuestion()">Set/Change Question</button>
+            <select name="mode" id="mode" onchange="setQuestion()">
+                <option value="1">EASY</option>
+                <option value="2" selected>MEDIUM</option>
+                <option value="3">HARD</option>
+            </select>
+        </div>
 
-    <div class="whole">
         <div class="part">
             <h3>What is Sudoku?</h3>
             <div class="partcontent">
-                <img src="images/back.jpeg" alt="">
+                <img src="https://urbanrim.org.uk/images/sudoku-blankgrid.png" alt="">
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro eum quam nam corporis, enim eveniet
-                    repudiandae reiciendis! Totam expedita fugit, optio ipsum eaque architecto repellendus fugiat. In
-                    iure
-                    doloribus nobis!
+                    Sudoku is played on a grid of 9 x 9 spaces. Within the rows and columns are 9 “squares” (made up of
+                    3 x 3 spaces). Each row, column and square (9 spaces each) needs to be filled out with the numbers
+                    1-9, without repeating any numbers within the row, column or square. Does it sound complicated? As
+                    you can see from the image below of an actual Sudoku grid, each Sudoku grid comes with a few spaces
+                    already filled in; the more spaces filled in, the easier the game – the more difficult Sudoku
+                    puzzles have very few spaces that are already filled in.
                 </p>
             </div>
         </div>
         <div class="part">
-            <h3>What is Sudoku?</h3>
+            <h3>Sudoku Rule No 2: Don’t Repeat Any Numbers</h3>
             <div class="partcontent reverse">
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro eum quam nam corporis, enim
-                    eveniet
-                    repudiandae reiciendis! Totam expedita fugit, optio ipsum eaque architecto repellendus fugiat.
-                    In iure
-                    doloribus nobis!
+                    As you can see, in the upper left square (circled in blue), this square already has 7 out of the 9
+                    spaces filled in. The only numbers missing from the square are 5 and 6. By seeing which numbers are
+                    missing from each square, row, or column, we can use process of elimination and deductive reasoning
+                    to decide which numbers need to go in each blank space.
+
+                    For example, in the upper left square, we know we need to add a 5 and a 6 to be able to complete the
+                    square, but based on the neighboring rows and squares we cannot clearly deduce which number to add
+                    in which space. This means that we should ignore the upper left square for now, and try to fill in
+                    spaces in some other areas of the grid instead.
                 </p>
-                <img src="images/back.jpeg" alt="">
+                <img src="https://sudoku.com/img/post-images/Sudoku-Rules-for-Complete-Beginners-1.jpg" alt="">
             </div>
         </div>
     </div>

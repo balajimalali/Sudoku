@@ -13,34 +13,24 @@ body{
     
 }
 
-.navbar ul{
-    display: flex;
-    padding: 1%;
-    justify-content: space-around;
-}
-
-
-.navbar ul div{
-    display: flex;
-    width: 25%;
-    justify-content: space-around;
-}
-
-.links li a{
-    color: aliceblue;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: large;
-    font-family: cursive;
-}
-
-.navbar ul li{
-    margin-left: 40px;
-    list-style: none;
-}
 .navbar{
-    /* background-color: aqua; */
     width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.links{
+    width: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.links a{
+    text-decoration: none;
+    font-size: larger;
+    font-weight: 800;
+    color: antiquewhite;
+    padding-left: 25%;
 }
 
 h1{
@@ -48,8 +38,8 @@ h1{
 }
 .sudoku{
     width: 30%; /*300px*/
-    margin: auto;
     display: grid;
+    margin: auto;
     grid-template-columns: auto auto auto auto auto auto auto auto auto;
 }
 
@@ -68,7 +58,7 @@ h1{
     background-color: aquamarine;
 }
 
-@keyframes flash{
+/* @keyframes flash{
     0%{
         height: 80%;
         width: 80%;
@@ -82,7 +72,7 @@ h1{
         height: 80%;
         width: 80%;
     }
-}
+} */
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button{
@@ -104,16 +94,18 @@ input[type=number]::-webkit-outer-spin-button{
     background-color: aqua;
 }
 
-button:hover{
+.button button:hover{
     width: 150px;
     height: 45px;
 }
 
 #search{
-    height: 150%;
+    height: 100%;
+    width: 80%;
     border: none;
     border-radius: 20px;
     text-align: center;
+    margin-left: 10%;
 }
 
 .content{
@@ -137,6 +129,8 @@ button:hover{
 }
 
 .part h3{
+    font-size: x-large;
+    color: rgb(253, 197, 11);
     margin: 5%;
 }
 
@@ -145,7 +139,15 @@ button:hover{
     justify-content: space-around;
 }
 
+.part img{
+    margin: 2%;
+    width: 25%;
+    height: 25%;
+}
+
 .partcontent p{
+    font-size: larger;
+    color: blanchedalmond   ;
     margin: 2%;
 }
 
@@ -162,27 +164,46 @@ button:hover{
     border-right: 4px solid black;
 }
 
-@media only screen and (max-width:500px) {
+button{
+    cursor: pointer;
+}
+
+select, #question{
+    border: none;
+    text-align: center;
+    border-radius: 2px;
+    height: 30px;
+    background-color: rgb(88, 88, 209);
+    color: orange;
+    font-weight: bolder;
+    padding: 2%;
+    margin-top: 2%;
+}
+
+@media only screen and (max-width:600px) {
 
     body{
         background-image: linear-gradient(to top right,rgb(126, 101, 194),rgb(25, 129, 86));
         overflow-x: hidden;
     }
 
+    .whole{
+        width: 100%;
+    }
+
     .navbar ul{
         display: flex;
-        padding: 5%;
-        justify-content: space-between;
+        justify-content: space-around;
+        margin: 10px;
     }
 
     .links{
-        margin-left: 5%;
+        margin-left: -5%;
     }
 
     .content{
         width: 100%;
         margin: auto;
-        margin-left: 12%;
         margin-top: 5vh;
         margin-bottom: 5vh;
     }
@@ -192,24 +213,32 @@ button:hover{
         margin: auto;
     }
 
-    .settings{
+    .sudoku{
+        margin: 0;
         width: 100%;
-        margin: auto;
+        display: flex;
+    }
+
+    .input{
+        margin: 1;
+        width: 70%;
+    }
+
+    .settings{
         position: relative;
         margin-top: 2vh;
+        left: 0;
+        display: flex;
+        justify-content: space-evenly;
     }
 
     .button{
         width: 100%;
         margin: auto;
-        margin-left: 11%;
         margin-top: 5vh;
     }
 
-    .whole{
-        width: 100%;
-        margin: auto;
-    }
+
     .part h3{
         font-size: larger;
         text-align: center;

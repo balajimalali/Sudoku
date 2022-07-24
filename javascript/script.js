@@ -1,17 +1,17 @@
 mainsud = document.getElementById("mainSudoku");
 
 que = []
-// que1 = [
-//     [5,3,0,0,7,0,0,0,0],
-//     [6,0,0,1,9,5,0,0,0],
-//     [0,9,8,0,0,0,0,6,0],
-//     [8,0,0,0,6,0,0,0,3],
-//     [4,0,0,8,0,3,0,0,1],
-//     [7,0,0,0,2,0,0,0,6],
-//     [0,6,0,0,0,0,2,8,0],
-//     [0,0,0,4,1,9,0,0,5],
-//     [0,0,0,0,8,0,0,7,9]
-// ]
+que1 = [
+    [5,3,0,0,7,0,0,0,0],
+    [6,0,0,1,9,5,0,0,0],
+    [0,9,8,0,0,0,0,6,0],
+    [8,0,0,0,6,0,0,0,3],
+    [4,0,0,8,0,3,0,0,1],
+    [7,0,0,0,2,0,0,0,6],
+    [0,6,0,0,0,0,2,8,0],
+    [0,0,0,4,1,9,0,0,5],
+    [0,0,0,0,8,0,0,7,9]
+]
 
 for (let index = 1; index <= 9; index++) {
     let obj = document.createElement("div")
@@ -47,6 +47,11 @@ for (let index = 1; index <= 9; index++) {
     
 }
 
+
+// fetching questions
+
+let quejson = fetch('questions.json');
+
 function getArray(){
     que = [];
     let sudokuobj = document.getElementById('mainSudoku');
@@ -71,7 +76,6 @@ function display(arr){
         }
     }
 }
-// display(que1)
 
 function buttonsolve(){
     console.log("solving..");
@@ -88,7 +92,94 @@ function buttonsolve(){
 function clearSudoku(){
     for(let i=1;i<=9;i++){
         for(let j=1;j<=9;j++){
-            document.getElementById('s'+String(i)+String(j)).value = '';
+            let objclr = document.getElementById('s'+String(i)+String(j));
+            objclr.value = '';
+            objclr.disabled = false;
+            objclr.style.color = 'black';
         }
     }
 }
+
+function setQuestion(){
+    arr = que1;
+    let sudokuobj = document.getElementById('mainSudoku');
+    for(let i =1;i<=9;i++){
+        let sudokuminobj = sudokuobj.childNodes[i].childNodes;
+        for(let j=0;j<9;j++){
+            let objset = sudokuminobj[j];
+            objset.value = arr[i-1][j];
+            if(arr[i-1][j]!=0){
+                objset.disabled = true;
+                objset.style.color = 'green';
+            }
+            else{
+                objset.value = '';
+            }
+        }
+    }
+}
+
+function animdel(level){
+    for(let i=5-level;i<=5+level;i++){
+        for(let j=5-level;j<=5+level;j++){
+            if(i==5-level || j==5-level || i==5+level || j==5+level){
+                let objanim = document.getElementById('s'+String(i)+String(j));
+                objanim.style.backgroundColor = 'aquamarine';
+            }
+        }
+    }
+}
+
+function animset(level,col){
+    for(let i=5-level;i<=5+level;i++){
+        for(let j=5-level;j<=5+level;j++){
+            if(i==5-level || j==5-level || i==5+level || j==5+level){
+                let objanim = document.getElementById('s'+String(i)+String(j));
+                objanim.style.backgroundColor = col;
+            }
+        }
+    }
+}
+
+function anim(col,gap){    
+    time = 0;
+    setTimeout(() => {
+        objanim = document.getElementById('s'+String(5)+String(5));
+        objanim.style.backgroundColor = col;
+    }, time);
+    time += gap;
+    setTimeout(() => {
+        objanim.style.backgroundColor = 'aquamarine';
+        animset(1,col);
+    }, time);
+    time += gap;
+    setTimeout(() => {
+        animdel(1);
+        animset(2,col);
+    }, time);
+    time += gap;
+    setTimeout(() => {
+        animdel(2);
+        animset(3,col)
+    }, time);
+    time += gap;
+    setTimeout(() => {
+        animdel(3);
+        animset(4,col);
+    }, time);
+    time += gap;
+    setTimeout(() => {
+        animdel(4);
+    }, time);
+}
+
+setTimeout(() => {
+    anim('red',100)
+}, 1000);
+setTimeout(() => {
+    anim('orange',100)
+}, 1500);
+setTimeout(() => {
+    anim('green',100)
+}, 2000);
+

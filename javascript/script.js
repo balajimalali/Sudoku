@@ -25,6 +25,21 @@ for (let index = 1; index <= 9; index++) {
         objin.type = 'number';
         objin.min = 0;
         objin.max = 9;
+        if(index==1 || index==4 || index==7){
+            objin.classList.add("bordertop")
+        }
+        if(index==3 || index==6 || index==9){
+            objin.classList.add("borderbottom")
+        }
+        if(j==1 || j==4 || j==7){
+            objin.classList.add("borderleft")
+        }
+        if(j==3 || j==6 || j==9){
+            objin.classList.add("borderright")
+        }
+
+        objin.style.animationDelay = String((index+j)/10) + 's';
+        
         obj.appendChild(objin);
     }
 

@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
-    <title>Document</title>
+    <title>Sudoku</title>
 </head>
 <style>
-    
+
 </style>
+
 <body>
     <div class="navbar">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
+            <div class="links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+            </div>
+            <div class="search">
+                <input type="text" id="search" placeholder="Search">
+            </div>
         </ul>
     </div>
 
@@ -22,24 +29,44 @@
         <h1>Learn Sudoku</h1>
     </div>
     <div id="mainSudoku">
-        
     </div>
     <div class="button">
-
         <button onclick="buttonsolve()" id="solve">Solve</button>
         <button onclick="clearSudoku()" id="clear">Clear</button>
     </div>
-    <!-- <div class="sudoku"> 
-        <input type="number" name="s12" id="s12" class="input">
-        <input type="number" name="s13" id="s13" class="input">
-        <input type="number" name="s14" id="s14" class="input">
-        <input type="number" name="s15" id="s15" class="input">
-        <input type="number" name="s16" id="s16" class="input">
-        <input type="number" name="s17" id="s17" class="input">
-        <input type="number" name="s18" id="s18" class="input">
-        <input type="number" name="s19" id="s19" class="input">
-    </div> -->
+    <div class="settings">
+        <h1>Settings</h1>
+    </div>
+
+    <div class="whole">
+        <div class="part">
+            <h3>What is Sudoku?</h3>
+            <div class="partcontent">
+                <img src="images/back.jpeg" alt="">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro eum quam nam corporis, enim eveniet
+                    repudiandae reiciendis! Totam expedita fugit, optio ipsum eaque architecto repellendus fugiat. In
+                    iure
+                    doloribus nobis!
+                </p>
+            </div>
+        </div>
+        <div class="part">
+            <h3>What is Sudoku?</h3>
+            <div class="partcontent reverse">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro eum quam nam corporis, enim
+                    eveniet
+                    repudiandae reiciendis! Totam expedita fugit, optio ipsum eaque architecto repellendus fugiat.
+                    In iure
+                    doloribus nobis!
+                </p>
+                <img src="images/back.jpeg" alt="">
+            </div>
+        </div>
+    </div>
     <script src="javascript/sudoku.js"></script>
     <script src="javascript/script.js"></script>
 </body>
+
 </html>

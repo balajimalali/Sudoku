@@ -1,31 +1,87 @@
-.navbar>ul{
-    display: inline-flex;
+*{
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
 }
 
-.navbar>ul>li{
+body{
+    background-image: url("../images/unsplash.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    
+}
+
+.navbar ul{
+    display: flex;
+    padding: 1%;
+    justify-content: space-around;
+}
+
+
+.navbar ul div{
+    display: flex;
+    width: 25%;
+    justify-content: space-around;
+}
+
+.links li a{
+    color: aliceblue;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: large;
+    font-family: cursive;
+}
+
+.navbar ul li{
     margin-left: 40px;
     list-style: none;
 }
 .navbar{
-    background-color: aqua;
+    /* background-color: aqua; */
     width: 100%;
 }
-a{
-    text-decoration: none;
-}
+
 h1{
     text-align: center;
 }
 .sudoku{
-    width: 300px; /*500px*/
+    width: 30%; /*300px*/
     margin: auto;
-    display: -ms-inline-grid;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto;
 }
 
 .input{
-    width: 20px;  /*40px;*/  
     margin-top: 3px;
     margin: 1px;
+    box-shadow: none;
+    border: none;
+    text-align: center;
+    font-weight: bolder;
+    animation-name: flash;
+    animation-duration: 0.2s;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    background-color: aquamarine;
+}
+
+@keyframes flash{
+    0%{
+        height: 80%;
+        width: 80%;
+    }
+    50% {
+        height: 60%;
+        width: 60%;
+        background-color: aqua;
+    }
+    100% {
+        height: 80%;
+        width: 80%;
+    }
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -35,6 +91,143 @@ input[type=number]::-webkit-outer-spin-button{
 
 .button{
     margin: 5px;
+    height: 50px;
     text-align: center;
 }
 
+.button button{
+    width: 100px;
+    height: 30px;
+    border: 3px solid rgb(247, 223, 8);
+    border-radius: 20px;
+    margin: 2%;
+    background-color: aqua;
+}
+
+button:hover{
+    width: 150px;
+    height: 45px;
+}
+
+#search{
+    height: 150%;
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.content{
+    margin: 2%;
+    color: rgb(209, 80, 203);
+    font-family: cursive;
+}
+
+.settings{
+    position: absolute;
+    left: 10%;
+    top: 30%;
+}
+
+.whole{
+    margin-top: 40px;
+}
+
+.part{
+    margin: 5%;
+}
+
+.part h3{
+    margin: 5%;
+}
+
+.partcontent{
+    display: flex;
+    justify-content: space-around;
+}
+
+.partcontent p{
+    margin: 2%;
+}
+
+.bordertop{
+    border-top: 4px solid rgb(33, 218, 243);
+}
+.borderbottom{
+    border-bottom: 4px solid black;
+}
+.borderleft{
+    border-left: 4px solid rgb(33, 218, 243);
+}
+.borderright{
+    border-right: 4px solid black;
+}
+
+@media only screen and (max-width:500px) {
+
+    body{
+        background-image: linear-gradient(to top right,rgb(126, 101, 194),rgb(25, 129, 86));
+        overflow-x: hidden;
+    }
+
+    .navbar ul{
+        display: flex;
+        padding: 5%;
+        justify-content: space-between;
+    }
+
+    .links{
+        margin-left: 5%;
+    }
+
+    .content{
+        width: 100%;
+        margin: auto;
+        margin-left: 12%;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+    }
+
+    .mainSudoku{
+        width: 100%;
+        margin: auto;
+    }
+
+    .settings{
+        width: 100%;
+        margin: auto;
+        position: relative;
+        margin-top: 2vh;
+    }
+
+    .button{
+        width: 100%;
+        margin: auto;
+        margin-left: 11%;
+        margin-top: 5vh;
+    }
+
+    .whole{
+        width: 100%;
+        margin: auto;
+    }
+    .part h3{
+        font-size: larger;
+        text-align: center;
+    }
+
+    .partcontent{
+        text-align: justify;
+        flex-direction: column;
+    }
+
+    .reverse{
+        flex-direction: column-reverse;
+    }
+
+    .partcontent img{
+        width: 50%;
+        margin: auto;
+        height: 50%;
+    }
+
+}
